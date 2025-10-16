@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  padding: 20px 5px;
+  padding: 20px 15px;
   background-color: $mainColor;
   @include flex-center(row, 0);
   justify-content: space-between;
@@ -8,7 +8,9 @@
 
   &__logo {
     width: 160px;
-    @include tableta { width: 120px; }
+    padding-left: 7.8rem;
+    @include tableta { width: 120px; 
+     padding-left: 2rem;}
   }
 
   &__nav {
@@ -31,14 +33,41 @@
       gap: 9px;
     }
   }
-}
+  
+  &__menunav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 35%;
+    height: 90%;
+    padding: 30px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 9%;
+    left: -100%;
+    z-index: 1000; 
+    transition: left 0.3s ease-in-out; 
+    background-color: $mainColor;
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.2);
+    @include celular { box-shadow: none; }
+    &.shownav{
+      left: 0;
+    }
+  }
+  &__close {
+    width: 35px;
+    align-self: flex-end;
+    margin: 0 20px 10px 0;
+  }
 
+}
+  
 .main {
   &__banner {
     width: 100%;
     @include flex-center(column, 20px);
     padding: 50px 0;
-    background-image: url("img/fondo3.webp");
+    background-image: url("../img/fondo3.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -53,7 +82,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   box-sizing: border-box;
-
   @include tableta { grid-template-columns: repeat(2, 1fr); }
   @include celular {
     grid-template-columns: 1fr;
@@ -67,8 +95,12 @@
   padding: 20px;
   box-sizing: border-box;
   position: fixed;
-  top: 100px;
-  right: 100%;
+  top: 9%;
+  right: -100%;
+  transition: right 0.3s ease-in-out;
+  &.show{
+    right: 0;
+  }
 
   @include tableta {
     width: 400px;
@@ -108,6 +140,7 @@
 
   &__link {
   @extend %link;
+  
   }
 
   &__text {

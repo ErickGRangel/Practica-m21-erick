@@ -1,4 +1,26 @@
-.header__icon {
+.header{
+  &__menubtn{
+    @include button-style($padding: 0px 10px);
+    @include celular { display: block; }
+  }
+  ul{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+  li{
+     @include icon-hover(.95);
+  }
+  &__link {
+  @include tableta { font-size: 1.2rem; margin: 0 10px; }
+  @include celular { font-size: 16px; margin: 0 8px; }
+  }
+}
+
+.header__icon,
+.header__menubtn,
+.header__cart,
+.header__close {
   @include icon-hover;
   @include tableta {
     width: 20px;
@@ -33,14 +55,12 @@
   }
 }
 
-.products__item:hover .products__image {
-  transform: scale(1.1); 
-}
 .products__image {
   width: 240px;
   height: 250px;
   object-fit: cover;
   transition: transform 0.4s ease;
+  @include icon-hover(1.2);
   @include tableta {
     width: 155px;
     height: 200px;
@@ -54,7 +74,6 @@
 
 .products__price {
   font-size: 20px;
-  padding-bottom: 10px;
   opacity: 0.6;
   @include celular {
     font-size: 16px;
@@ -64,6 +83,7 @@
 
 .products__button {
   @include button-style();
+  @include icon-hover;
 }
 
 .cart {
@@ -76,15 +96,38 @@
     font-size: 30px;
     font-weight: 600;
     text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #190303;
     @include celular { font-size: 32px; }
   }
+
   &__item {
     border-bottom: 1px solid $mainColor;
   }
+
   &__image {
-    width: 100px;
+    width: 30%;
     @include celular { width: 150px; }
   }
+
+  &__trash {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    @include celular { width: 150px; }
+  }
+
+  &__closeIcon {
+    @include icon-hover(1.2);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    @include celular { width: 20px; height: 20px; top: 10px; right: 10px; }
+  }
+
   &__description {
     font-size: 20px;
     font-weight: 600;
@@ -93,18 +136,46 @@
       margin: 5px;
     }
   }
+
   &__icon {
     width: 20px;
+    height: 20px;
     cursor: pointer;
   }
+
+  &__badge {
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    top: 13px;
+    right: 65px;
+    background-color: #e74c3c; 
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.showbadge {
+      display: flex;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
 }
+
 @media (hover: hover) and (pointer: fine) {
   .products__button:hover {
     background-color: $secundaryColor;
     color: #fff;
   }
-  .header__link,.footer__link:hover {
+  .header__link:hover,
+  .footer__link:hover {
     color: $secundaryColor;
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
