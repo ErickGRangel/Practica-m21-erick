@@ -38,9 +38,9 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    width: 35%;
-    height: 90%;
-    padding: 30px;
+    width: 188px;
+    height: auto;
+    padding: 14px;
     box-sizing: border-box;
     position: fixed;
     top: 9%;
@@ -52,12 +52,12 @@
     @include celular { box-shadow: none; }
     &.shownav{
       left: 0;
+       @include celular { width: 30%; height: 100%;}
     }
   }
   &__close {
     width: 35px;
     align-self: flex-end;
-    margin: 0 20px 10px 0;
   }
 
 }
