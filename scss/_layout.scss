@@ -30,7 +30,7 @@
     padding-left: 6rem;
     @include tableta {
       padding-left: 5px;
-      gap: 9px;
+      gap: 20px;
     }
   }
   
@@ -52,7 +52,7 @@
     @include celular { box-shadow: none; }
     &.shownav{
       left: 0;
-       @include celular { width: 30%; height: 100%;}
+       @include celular { width: 30%; height: 50%;}
     }
   }
   &__close {
@@ -117,10 +117,23 @@
     box-sizing: border-box;
     @include celular {
       flex-direction: column;
-      align-items: center;
+      gap: 15px;
     }
   }
 }
+
+.banner2{
+  height: 150px;
+  width: 100%;
+  @include flex-center(column, 0px);
+  padding: 55px 0;
+  margin: 10px 0 ;
+  background-image: url("../img/secondbanner.webp");
+  background-position: center;
+  background-size: cover;   
+}
+
+
 
 .footer {
   @include flex-center(column, 15px);

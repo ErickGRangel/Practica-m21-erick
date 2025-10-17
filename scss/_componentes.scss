@@ -14,6 +14,7 @@
   &__link {
   @include tableta { font-size: 1.2rem; margin: 0 10px; }
   @include celular { font-size: 16px; margin: 0 8px; }
+  
   }
 }
 
@@ -98,7 +99,8 @@
     text-align: center;
     padding-bottom: 10px;
     border-bottom: 1px solid #190303;
-    @include celular { font-size: 32px; }
+    @include celular { font-size: 25px; }
+    @include tableta { font-size: 20px; }
   }
 
   &__item {
@@ -107,14 +109,14 @@
 
   &__image {
     width: 30%;
-    @include celular { width: 150px; }
+    @include celular { width: 120px; }
   }
 
   &__trash {
     width: 30px;
     height: 30px;
     cursor: pointer;
-    @include celular { width: 150px; }
+    @include celular {}
   }
 
   &__closeIcon {
@@ -166,6 +168,60 @@
       pointer-events: auto;
     }
   }
+}
+.form {
+  padding: 40px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: $mainColor;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form__label {
+  font-family: $mainFuente;
+  font-weight: 700;
+  font-size: 16px;
+  color: #000;
+}
+
+.form__input,
+.form__select,
+.form__text {
+  padding: 12px;
+  font-family: $mainFuente;
+  font-size: 16px;
+  border: 2px solid #141212;
+  border-radius: 4px;
+  background-color: #ffffff;
+
+  &:focus {
+    outline: 2px solid $secundaryColor;
+    border-color: $secundaryColor;
+  }
+}
+
+.form__text {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact__button {
+  @include button-style($bg: $secundaryColor, $color: #fff);
+  padding: 14px;
+  font-size: 18px;
+  width: 100%;
+  margin-top: 8px;
 }
 
 @media (hover: hover) and (pointer: fine) {

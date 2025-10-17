@@ -92,6 +92,40 @@
       <h2 id="cart-title" class="cart__title">Carrito</h2>
       <img src="img/x.svg" alt="Cerrar carrito" class="cart__closeIcon">
     </section>
+
+    <div class="banner2">
+      <button class="products__button">Comprar Ahora</button>
+    </div>
+
+    <section class="form">
+      <div class="contact">
+        <form class="contact__form">
+          <div class="form__group">
+            <label for="nombre" class="form__label">Nombre completo</label>
+            <input type="text" name="nombre" class="form__input" required>
+          </div>
+      </div>
+      <div class="form__group">
+        <label for="email" class="form__label">Correo electrónico</label>
+        <input type="email" name="email" class="form__input" required>
+      </div>
+      <div class="form__group">
+          <label for="asunto" class="form__label">Asunto</label>
+          <select name="asunto" class="form__select" required>
+            <option value="">Selecciona una opción</option>
+            <option value="pedido">Consulta sobre un pedido</option>
+            <option value="producto">Información de producto</option>
+            <option value="talla">Guía de tallas</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+         <div class="form__group">
+          <label for="mensaje" class="form__label">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" class="form__text" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="contact__button">Enviar mensaje</button>
+    </section>
+
   </main>
 
   <footer class="footer">
