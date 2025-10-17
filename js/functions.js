@@ -42,7 +42,7 @@ productButtons.forEach(button => {
       <img src="${productImage}" alt="${productName}" class="cart__image">
       <p class="cart__description">${productName}</p>
       <p class="cart__price">${productPrice}</p>
-      <img src="../img/contenedor-de-basura.png" alt="eliminar" class="cart__trash">
+      <img src="img/contenedor-de-basura.png" alt="eliminar" class="cart__trash">
     `;
 
     const trashIcon = cartItem.querySelector('.cart__trash');
