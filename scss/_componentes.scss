@@ -10,6 +10,7 @@
   }
   li{
      @include icon-hover(.95);
+     @include celular { font-size: 40px;}
   }
   &__link {
   @include tableta { font-size: 1.2rem; margin: 0 10px; }
@@ -22,13 +23,14 @@
 .header__menubtn,
 .header__cart,
 .header__close {
+  width: 35px;
+  height: 30px;
   @include icon-hover;
-  @include tableta {
-    width: 20px;
-    height: 22px;
+  @include celular {
+    width: 30px;
+    height: 30px;
   }
 }
-
 .main__title {
   @extend %title;
   margin: 0;
@@ -169,12 +171,6 @@
     }
   }
 }
-.form {
-  padding: 40px 20px;
-  max-width: 700px;
-  margin: 0 auto;
-  background-color: $mainColor;
-}
 
 .contact__form {
   display: flex;
@@ -192,7 +188,7 @@
   font-family: $mainFuente;
   font-weight: 700;
   font-size: 16px;
-  color: #000;
+  color: #ffffff;
 }
 
 .form__input,
@@ -203,7 +199,7 @@
   font-size: 16px;
   border: 2px solid #141212;
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: #eeebebd9;
 
   &:focus {
     outline: 2px solid $secundaryColor;

@@ -5,7 +5,7 @@
 }
 
 .footer__link, .header__link {
-  font-size: 1.6rem;
+  font-size: 25px;
   font-weight: 800;
   text-decoration: none;
   color: #000;
@@ -13,6 +13,7 @@
 
 * {
   font-family: "Oswald", sans-serif;
+  box-sizing: border-box;
 }
 
 .header__menubtn {
@@ -46,6 +47,11 @@
     transform: scale(0.95);
   }
 }
+@media (max-width: 700px) {
+  .header li {
+    font-size: 40px;
+  }
+}
 @media (max-width: 1024px) {
   .header__link {
     font-size: 1.2rem;
@@ -63,6 +69,8 @@
 .header__menubtn,
 .header__cart,
 .header__close {
+  width: 35px;
+  height: 30px;
   transition: transform 0.2s ease;
   cursor: pointer;
 }
@@ -74,13 +82,13 @@
     transform: scale(1.1);
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 700px) {
   .header__icon,
   .header__menubtn,
   .header__cart,
   .header__close {
-    width: 20px;
-    height: 22px;
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -296,13 +304,6 @@
   pointer-events: auto;
 }
 
-.form {
-  padding: 40px 20px;
-  max-width: 700px;
-  margin: 0 auto;
-  background-color: #ccced4;
-}
-
 .contact__form {
   display: flex;
   flex-direction: column;
@@ -319,7 +320,7 @@
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 16px;
-  color: #000;
+  color: #ffffff;
 }
 
 .form__input,
@@ -330,7 +331,7 @@
   font-size: 16px;
   border: 2px solid #141212;
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: rgba(238, 235, 235, 0.8509803922);
 }
 .form__input:focus,
 .form__select:focus,
@@ -381,16 +382,15 @@
   align-items: center;
   gap: 0;
   justify-content: space-between;
-  box-sizing: border-box;
 }
 .header__logo {
-  width: 160px;
-  padding-left: 7.8rem;
+  width: 280px;
+  padding-left: 4rem;
 }
 @media (max-width: 1024px) {
   .header__logo {
-    width: 120px;
-    padding-left: 2rem;
+    padding-left: 5px;
+    width: 150px;
   }
 }
 .header__nav {
@@ -404,14 +404,9 @@
     gap: 20px;
   }
 }
-@media (max-width: 700px) {
-  .header__nav {
-    display: none;
-  }
-}
 @media (max-width: 1024px) {
   .header__link {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 .header__user {
@@ -542,7 +537,7 @@
 }
 
 .banner2 {
-  height: 150px;
+  height: 200px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -553,6 +548,16 @@
   background-image: url("../img/secondbanner.webp");
   background-position: center;
   background-size: cover;
+}
+
+.form {
+  padding: 40px 20px;
+  opacity: 80%;
+  width: 100%;
+  background-image: url("../img/fondo-form.jpg");
+  background-position: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {
